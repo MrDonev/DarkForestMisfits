@@ -1,13 +1,140 @@
-body {
+html,body{
+  margin:0;
+  padding:0;
+}
+#root{
+  min-height: 100vh;
+  background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+}
+/* Header */
+#header{
+  background-color: rgb(145, 145, 145);
+  height: 16vh;
+display: grid;
+grid-template-columns: 80% 20%;
+}
+#button-section-header{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+.button{
+  padding: 0.5em;
+  background: radial-gradient(circle at 31% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);;
+  margin:1em;
+  color: azure;
+  height: 2.5em;
+  width: 9em;
+  font-size: 1rem;
+ border-radius: 0.4em;
+ border:1px transparent;
+ transition: all 0.5s;
+}
+.log-in{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  height: auto;
+  width: 5em;
+  font-size: 0.8rem;
+}
+.log-in:hover{
+  font-size: 0.8rem !important;
+}
+.button:hover{
+  cursor: pointer;
+  font-size:1.1rem;
+  animation: bounce 1.5s linear infinite;
+}
+@keyframes bounce {
+  0%   { color: rgb(200, 255, 183);}
+  25%  { color: rgb(116, 252, 74); }
+  50% { color: rgb(63, 255, 5); }
+  75%  { color: rgb(116, 252, 74); }
+  100%   { color: rgb(200, 255, 183);}
+}
+.profile-pic-header{
+  width: 12em;
+  height: 8em;
+  border-radius: 2.5em;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile-pic-header > img {
+margin-top:0.5em;
+  width: 50%;
+  height: 70%;
+}
+.metal {
+  outline: none; 
+  text-align: center;
+  color: hsla(0,0%,20%,1);
+  text-shadow: hsla(0,0%,40%,.5) 0 -1px 0, hsla(0,0%,100%,.6) 0 2px 1px;
+  background-color: hsl(0,0%,90%);
+  box-shadow: inset hsla(0,0%,15%,  1) 0  0px 0px 2px, /* border */
+    inset hsla(0,0%,15%, .8) 0 -1px 5px 2px, /* soft SD */
+    inset hsla(0,0%,0%, .25) 0 -1px 0px 4px, /* bottom SD */
+    inset hsla(0,0%,100%,.7) 0  2px 1px 5px, /* top HL */
+    hsla(0,0%, 0%,.15) 0 -5px 4px 2px, /* outer SD */
+    hsla(0,0%,100%,.5) 0  5px 4px 2px; /* outer HL */ 
+  transition: color .2s;
+}
+.metal.linear {
+  background-image: -webkit-repeating-linear-gradient(left, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0)   6%, hsla(0,0%,100%, .1) 7.5%),
+    -webkit-repeating-linear-gradient(left, hsla(0,0%,  0%,0) 0%, hsla(0,0%,  0%,0)   4%, hsla(0,0%,  0%,.03) 4.5%),
+    -webkit-repeating-linear-gradient(left, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 1.2%, hsla(0,0%,100%,.15) 2.2%),
+    linear-gradient(180deg, hsl(0,0%,78%)  0%, 
+    hsl(0,0%,90%) 47%, 
+    hsl(0,0%,78%) 53%,
+    hsl(0,0%,70%)100%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Log in form */
+#log-in{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color:azure;
+}
+.container{
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 30vw;
+  margin:auto;
+  align-items: center;
+  justify-content: center;
+}
+#log-in input{
+  width:50%;
+  padding: 1em;
+  margin:0.1em 0 0.2em 0;
+  display: inline-block;
+  background-color: rgb(255, 255, 255);
+}
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 1em;
+  background-color: #f44336;
+}
+.signupbtn{
+padding: 1em;
+background-color: chartreuse;
+}
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  width: 8em;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
 }
